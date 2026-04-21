@@ -1,11 +1,15 @@
 [project]
 name = "pipecat-quickstart"
 version = "0.1.0"
-description = "Voice AI bot built with Pipecat"
+description = "Voice AI bot built with Pipecat, plus a Markdown-powered quiz agent (Tooploox challenge)"
 requires-python = ">=3.10"
 dependencies = [
-    "gradio>=6.13.0",
+    # Pinned to <6: Gradio 6.x (tested 6.13.0) has a client-side queue/SSE
+    # regression that leaves phantom "processing" indicators and breaks
+    # follow-up clicks on localhost. 5.x works; re-evaluate when 6 stabilises.
+    "gradio>=5,<6",
     "langchain>=1.2.15",
+    "langchain-openai>=0.3.0",
     "pipecat-ai[cartesia,daily,deepgram,openai,runner,silero,webrtc]",
     "pipecatcloud",
 ]
@@ -13,6 +17,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pyright>=1.1.404,<2",
+    "pytest>=8.0,<9",
     "ruff>=0.12.11,<1",
 ]
 

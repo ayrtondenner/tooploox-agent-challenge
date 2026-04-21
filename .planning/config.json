@@ -1,0 +1,21 @@
+{
+  "project_name": "tooploox-agent-challenge",
+  "primary_language": "python",
+  "package_manager": "uv",
+  "project_root": "pipecat-quickstart/server",
+  "workflow": {
+    "require_plan_approval": true,
+    "atomic_commits_per_phase": true,
+    "run_tests_before_commit": true
+  },
+  "conventions": {
+    "line_length": 100,
+    "lint": "ruff",
+    "types": "pyright"
+  },
+  "llm": {
+    "provider": "openai",
+    "default_model_env": "OPENAI_MODEL",
+    "fallback_model": "gpt-4.1"
+  }
+}

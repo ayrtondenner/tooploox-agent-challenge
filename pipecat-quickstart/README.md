@@ -1,8 +1,22 @@
 # pipecat-quickstart
 
-A Pipecat AI voice agent built with a cascade pipeline (STT → LLM → TTS).
+This directory hosts two independent Python entry points that share one `uv` project:
 
-## Configuration
+1. **`bot.py`** — a Pipecat voice agent built with a cascade pipeline (STT → LLM → TTS). This is the original quickstart scaffold and is left unchanged.
+2. **`quiz/`** — the **Markdown Quiz Agent** that is the actual Tooploox code-challenge deliverable. See the top-level [README.md](../README.md) for the full write-up, the scoring interpretation, and a note on how the build was driven (Claude Code + GSD + Superpowers).
+
+Quick commands (from `server/`):
+
+```bash
+uv sync                          # install deps for both apps
+uv run pytest                    # run quiz tests (60)
+uv run python -m quiz.app        # launch the quiz Gradio UI at http://127.0.0.1:7860
+uv run bot.py                    # launch the voice bot (unchanged)
+```
+
+---
+
+## Voice bot configuration (unchanged from the scaffold)
 
 - **Bot Type**: Web
 - **Transport(s)**: SmallWebRTC, Daily (WebRTC)

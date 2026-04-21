@@ -1,4 +1,11 @@
 {
+  "permissions": {
+    "allow": [
+      "Skill(gsd:debug)",
+      "Skill(gsd:debug:*)",
+      "Bash(uv run *)"
+    ]
+  },
   "hooks": {
     "SessionStart": [
       {
@@ -92,5 +99,8 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true
   }
 }
